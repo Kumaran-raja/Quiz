@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+         var currentIndex=1;
+        
+         function button(value){
+            let option_ans=["option_a_ans","option_b_ans","option_c_ans","option_d_ans"]
+            let option=["option_a","option_b","option_c","option_d"]
+            let option_click=document.getElementById(option[value-1])
+            let crt_ans=document.getElementById(option_ans[value-1]);
+            if(currentIndex==1){
+               if(value==4){
+                crt_ans.style="background-color:green;";
+                option_click.style="background-color:green;";
+               }else{
+
+                crt_ans.style="background-color:red;";
+                option_click.style="background-color:red;";
+               }
+            }
+            else if(currentIndex==2){
+                if(value==3){
+                crt_ans.style="background-color:green;";
+                option_click.style="background-color:green;";
+               }else{
+
+                crt_ans.style="background-color:red;";
+                option_click.style="background-color:red;";
+               }
+            }
+            else if(currentIndex==3){
+                if(value==2){
+                crt_ans.style="background-color:green;";
+                option_click.style="background-color:green;";
+               }else{
+
+                crt_ans.style="background-color:red;";
+                option_click.style="background-color:red;";
+               }
+            }
+            else if(currentIndex==4){
+                if(value==4){
+                crt_ans.style="background-color:green;";
+                option_click.style="background-color:green;";
+               }else{
+
+                crt_ans.style="background-color:red;";
+                option_click.style="background-color:red;";
+               }
+            }
+            else if(currentIndex==5){
+                if(value==4){
+                crt_ans.style="background-color:green;";
+                option_click.style="background-color:green;";
+               }else{
+
+                crt_ans.style="background-color:red;";
+                option_click.style="background-color:red;";
+               }
+            }
+            else if(currentIndex==6){
+                if(value==1){
+                crt_ans.style="background-color:green;";
+                option_click.style="background-color:green;";
+               }else{
+
+                crt_ans.style="background-color:red;";
+                option_click.style="background-color:red;";
+               }
+            }
+         }
+       
+        function reset(){
+            document.getElementById("option_a").style="background-color:rgb(221, 113, 113);";
+            document.getElementById("option_a_ans").style="background-color:white;";
+            document.getElementById("option_b").style="background-color:rgb(221, 113, 113);";
+            document.getElementById("option_b_ans").style="background-color:white;";
+            document.getElementById("option_c").style="background-color:rgb(221, 113, 113);";
+            document.getElementById("option_c_ans").style="background-color:white;";
+            document.getElementById("option_d").style="background-color:rgb(221, 113, 113);";
+            document.getElementById("option_d_ans").style="background-color:white;";
+        }
+
+        function next(){
+
+            if(this.currentIndex==6){
+                alert("This is Last Question")
+                currentIndex=5;
+                return false;
+
+            }
+            let index=this.currentIndex;
+            let optionA = document.getElementById("option_a_ans");
+            let optionB = document.getElementById("option_b_ans");
+            let optionC = document.getElementById("option_c_ans");
+            let optionD = document.getElementById("option_d_ans");
+           
+            let question=document.getElementById("question");
+            // let option=["option_a_ans","option_b_ans","option_c_ans","option_d_ans"]
+            let all_questions=["1. In web design, what does CSS stand for?","2. HTML stands for -","3. <input> is -","4. The <hr> tag in HTML is used for -","5. HTML tags are enclosed in-","6. How to insert a background image in HTML?"]
+            let all_optionA=["Counter Strike Source"," HighText Machine Language","a format tag.","new line","# h1 #","<body background = \"img.png\">"]
+            let all_optionB=["Corrective Style Sheet","HyperText and links Markup Language","an empty tag.","vertical ruler","{ h1 }","<img background = \"img.png\">"]
+            let all_optionC=["Computer Style Sheet","HyperText Markup Language","All of the above","new paragraph","! h1 ?","<bg-image = \"img.png\">"]
+            let all_optionD=["Cascading Style Sheet","None of these","None of the above","horizontal ruler","< h1 >","None of the above"]
+
+            question.innerText=all_questions[index];
+            optionA.innerText=all_optionA[index]
+            optionB.innerText=all_optionB[index]
+            optionC.innerText=all_optionC[index]
+            optionD.innerText=all_optionD[index]
+
+            this.currentIndex++;
+            reset();        //used for next question option background color change to default
+        }
+
+
+        function previous(){
+            if(this.currentIndex==0){
+                alert("This is First Question")
+                return false
+
+            }
+            let index=this.currentIndex-1;
+            let optionA = document.getElementById("option_a_ans");
+            let optionB = document.getElementById("option_b_ans");
+            let optionC = document.getElementById("option_c_ans");
+            let optionD = document.getElementById("option_d_ans");
+           
+            let question=document.getElementById("question");
+            let all_questions=["1. In web design, what does CSS stand for?","2. HTML stands for -","3. <input> is -","4. The <hr> tag in HTML is used for -","5. HTML tags are enclosed in-","6. How to insert a background image in HTML?"]
+            let all_optionA=["Counter Strike Source"," HighText Machine Language","a format tag.","new line","# h1 #","<body background = \"img.png\">"]
+            let all_optionB=["Corrective Style Sheet","HyperText and links Markup Language","an empty tag.","vertical ruler","{ h1 }","<img background = \"img.png\">"]
+            let all_optionC=["Computer Style Sheet","HyperText Markup Language","All of the above","new paragraph","! h1 ?","<bg-image = \"img.png\">"]
+            let all_optionD=["Cascading Style Sheet","None of these","None of the above","horizontal ruler","< h1 >","None of the above"]
+
+            question.innerText=all_questions[index];
+            optionA.innerText=all_optionA[index]
+            optionB.innerText=all_optionB[index]
+            optionC.innerText=all_optionC[index]
+            optionD.innerText=all_optionD[index]
+         
+            this.currentIndex--;
+        }
+       
+    </script>
+   </head>
+<body>
+    <div class="container">
+        <div style="display: flex;">
+            
+            <h1 id="question">1. In web design, what does CSS stand for?
+            </h1>
+        </div>
+        
+        <div class="merge">
+            <button class="option reset" id="option_a">A</button>
+            <button type="button reset" class="answer" id="option_a_ans" onclick="button(1)">Counter Strike Source</button>
+        </div>
+        <div class="merge">
+            <button class="option reset" id="option_b">B</button>
+            <button class="answer reset" id="option_b_ans" onclick="button(2)">Corrective Style Sheet</button>
+        </div>
+        <div class="merge">
+            <button class="option reset" id="option_c">C</button>
+            <button class="answer reset" id="option_c_ans" onclick="button(3)">Computer Style Sheet</button>
+        
+        </div>
+        <div class="merge">
+            <button class="option reset" id="option_d">D</button>
+            <button class="answer reset" id="option_d_ans" onclick="button(4)">Cascading Style Sheet</button>
+        </div>
+
+        <div class="button_div">
+            <button class="previous_btn" type="reset" onclick="previous()">
+                Previous
+            </button>
+            <button class="reset_btn" type="reset" onclick="reset()">
+                Reset
+            </button>
+            <button class="next_btn" type="reset" id="next" onclick="next()">
+                Next
+            </button>
+        </div>
+       
+      
+      
+    </div>
+   
+
+</body>
+</html>
